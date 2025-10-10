@@ -10,3 +10,4 @@ export default defineConfig({
   },
   site: 'https://MateoMougenot.github.io',
 });
+

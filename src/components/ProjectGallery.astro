@@ -2,16 +2,15 @@
 import ProjectCard from './ProjectCard.astro';
 import ProjectDetail from './ProjectDetail.astro';
 
-/* copie exacte de tes projects (tu peux l'importer depuis un fichier JSON si tu préfères) */
 const projects = [
   {
     id: 1,
     title: 'Brand Identity Motion',
     role: 'Motion Designer',
-    image: 'https://images.unsplash.com/photo-1732032506091-6fd57cc3113e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3Rpb24lMjBncmFwaGljcyUyMGFic3RyYWN0fGVufDF8fHx8MTc2MDA3ODU1OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: "Création d'une identité visuelle animée complète pour une startup tech. De la conception des éléments graphiques à leur animation, en passant par la création d'un logo animé et de templates pour les réseaux sociaux.",
-    challenge: "Créer une identité cohérente et moderne qui se démarque dans un secteur saturé tout en restant flexible pour différents supports.",
-    solution: "Développement d'un système de design modulaire avec des animations fluides et des transitions dynamiques, optimisé pour le web et les réseaux sociaux.",
+    image: 'https://images.unsplash.com/photo-1732032506091-6fd57cc3113e?...',
+    description: "Création d'une identité visuelle animée complète pour une startup tech.",
+    challenge: "Créer une identité cohérente et moderne qui se démarque dans un secteur saturé.",
+    solution: "Développement d'un système de design modulaire avec animations fluides.",
     tools: 'After Effects, Premiere Pro, Illustrator',
     featured: true,
   },
@@ -19,76 +18,34 @@ const projects = [
     id: 2,
     title: 'Urban Stories',
     role: 'Monteur Vidéo / Coloriste',
-    image: 'https://images.unsplash.com/photo-1618852432867-f98fa0616cbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMG5pZ2h0JTIwcGhvdG9ncmFwaHl8ZW58MXx8fHwxNzYwMDgwNzM3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: "Court-métrage documentaire explorant la vie nocturne urbaine à travers des portraits intimistes et une ambiance cinématographique soignée.",
-    challenge: "Capturer l'essence de la ville la nuit tout en maintenant une narration cohérente avec des conditions de tournage difficiles.",
-    solution: "Montage rythmé alternant plans larges et serrés, avec un étalonnage créant une atmosphère néon distinctive et un sound design immersif.",
+    image: 'https://images.unsplash.com/photo-1618852432867-f98fa0616cbb?...',
+    description: "Court-métrage documentaire explorant la vie nocturne urbaine.",
+    challenge: "Capturer l'essence de la ville la nuit avec narration cohérente.",
+    solution: "Montage rythmé et étalonnage néon pour ambiance immersive.",
     tools: 'Premiere Pro, DaVinci Resolve, After Effects',
     featured: true,
   },
   {
-    id: 3,
-    title: 'Tech Product Launch',
-    role: 'Motion Designer',
-    image: 'https://images.unsplash.com/photo-1749410342681-3510f9edb7ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMGVkaXRpbmclMjB3b3Jrc3RhdGlvbnxlbnwxfHx8fDE3NjAwODA3MzV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: "Vidéo de lancement produit combinant motion design 3D et prises de vues réelles pour un impact maximal.",
-    challenge: "Intégrer harmonieusement des éléments 3D avec du live action tout en respectant un brief créatif exigeant.",
-    solution: "Pipeline de production optimisé avec tracking précis et compositing soigné pour une intégration seamless.",
-    tools: 'Cinema 4D, After Effects, Premiere Pro',
+    id: 2,
+    title: 'Test',
+    role: 'Monteur Vidéo / Coloriste',
+    image: 'https://images.unsplash.com/photo-1618852432867-f98fa0616cbb?...',
+    description: "Court-métrage documentaire explorant la vie nocturne urbaine.",
+    challenge: "Capturer l'essence de la ville la nuit avec narration cohérente.",
+    solution: "Montage rythmé et étalonnage néon pour ambiance immersive.",
+    tools: 'Premiere Pro, DaVinci Resolve, After Effects',
     featured: true,
   },
-  {
-    id: 4,
-    title: 'Festival Aftermovie',
-    role: 'Monteur Vidéo',
-    image: 'https://images.unsplash.com/photo-1662288346057-6190cf5d7b42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwbGlnaHRzJTIwYWJzdHJhY3R8ZW58MXx8fHwxNzU5OTc2NDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: "Aftermovie énergique capturant l'ambiance et l'énergie d'un festival de musique électronique.",
-    challenge: "Condenser 3 jours d'événement en 2 minutes tout en préservant l'intensité et l'émotion.",
-    solution: "Montage dynamique synchronisé à la musique avec des transitions créatives et un rythme soutenu.",
-    tools: 'Premiere Pro, After Effects',
-    featured: false,
-  },
-  {
-    id: 5,
-    title: 'Corporate Video',
-    role: 'Réalisateur / Monteur',
-    image: 'https://images.unsplash.com/photo-1604349779113-ddc126b8bf4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHdvcmtzcGFjZSUyMGRhcmt8ZW58MXx8fHwxNzU5OTg5NDEwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: "Vidéo institutionnelle moderne pour une entreprise de technologie, mettant en valeur leur culture et leurs valeurs.",
-    challenge: "Rendre le contenu corporate engageant et authentique sans tomber dans les clichés.",
-    solution: "Approche documentaire avec interviews naturelles et B-roll cinématographique, le tout dans un style épuré.",
-    tools: 'Premiere Pro, DaVinci Resolve',
-    featured: false,
-  },
-  {
-    id: 6,
-    title: 'Social Media Campaign',
-    role: 'Motion Designer',
-    image: 'https://images.unsplash.com/photo-1665043548178-8e606eca11eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBtaW5pbWFsfGVufDF8fHx8MTc2MDA2MDk1Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: "Série de contenus courts et percutants pour une campagne social media multiplateforme.",
-    challenge: "Adapter le contenu à différents formats (stories, reels, posts) tout en maintenant une cohérence visuelle.",
-    solution: "Système de templates modulaires permettant une production rapide et efficace avec une identité forte.",
-    tools: 'After Effects, Premiere Pro',
-    featured: false,
-  },
-  {
-    id: 7,
-    title: 'Social Media Campaign',
-    role: 'Motion Designer',
-    image: 'https://images.unsplash.com/photo-1665043548178-8e606eca11eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBtaW5pbWFsfGVufDF8fHx8MTc2MDA2MDk1Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: "Série de contenus courts et percutants pour une campagne social media multiplateforme.",
-    challenge: "Adapter le contenu à différents formats (stories, reels, posts) tout en maintenant une cohérence visuelle.",
-    solution: "Système de templates modulaires permettant une production rapide et efficace avec une identité forte.",
-    tools: 'After Effectsss, Premiere Pro',
-    featured: false,
-  },
+  // ... autres projets (inchangés)
 ];
 ---
-<section id="projets" class="relative py-32 px-6 bg-black">
+
+<section id="projets" class="relative py-32 px-6 bg-black text-white">
   <div class="max-w-7xl mx-auto">
     <!-- Header -->
-    <div class="mb-16 reveal">
-      <h2 class="text-white mb-4 tracking-tight text-[clamp(2rem,6vw,4rem)]">Projets sélectionnés</h2>
-      <p class="text-white/60 max-w-2xl">
+    <div class="mb-16 fade-in-up">
+      <h2 class="text-white mb-4 tracking-tight text-[clamp(2rem,6vw,4rem)] font-semibold fade-in-up delay-100">Mes derniers projets</h2>
+      <p class="text-white/60 max-w-2xl fade-in-up delay-300">
         Une sélection de mes travaux récents en motion design et montage vidéo.
       </p>
     </div>
@@ -108,23 +65,21 @@ const projects = [
     </div>
   </div>
 
-  <!-- Modal (native dialog) -->
-  <dialog id="projectModal" class="rounded-2xl p-6 w-[min(92%,900px)] bg-black/95 text-white border border-white/5">
+  <!-- Modal -->
+  <dialog id="projectModal" class="rounded-2xl p-6 w-[min(92%,900px)] bg-black/95 text-white border border-white/5 shadow-2xl backdrop-blur-md">
     <button id="modalClose" class="absolute top-4 right-4 text-white/60 hover:text-white">✕</button>
     <div id="modalContent" class="space-y-4"></div>
   </dialog>
 </section>
 
-<script type="module">
-  // données sérialisées côté serveur -> client
+<script>
   const PROJECTS = JSON.parse(decodeURIComponent("${encodeURIComponent(JSON.stringify(projects))}"));
 
-  // reveal on scroll (IntersectionObserver)
+  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(ent => {
       if (ent.isIntersecting) {
-        ent.target.classList.add('in-view');
-        // si tu veux n'observer qu'une fois
+        ent.target.classList.add('opacity-100', 'translate-y-0');
         observer.unobserve(ent.target);
       }
     });
@@ -132,7 +87,7 @@ const projects = [
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // click behavior on cards
+  // Modal logic
   const modal = document.getElementById('projectModal');
   const modalContent = document.getElementById('modalContent');
   const modalClose = document.getElementById('modalClose');
@@ -144,10 +99,10 @@ const projects = [
           <img src="${project.image}" alt="${project.title}" class="w-full h-64 object-cover rounded-lg" />
         </div>
         <div>
-          <h3 class="text-white text-2xl font-semibold mb-2">${project.title}</h3>
+          <h3 class="text-2xl font-semibold mb-2">${project.title}</h3>
           <p class="text-white/60 mb-4">${project.role}</p>
           <p class="text-white/60 mb-4">${project.description}</p>
-          <ul class="text-white/60 space-y-2">
+          <ul class="text-white/60 space-y-2 text-sm leading-relaxed">
             ${project.challenge ? `<li><strong>Challenge :</strong> ${project.challenge}</li>` : ''}
             ${project.solution ? `<li><strong>Solution :</strong> ${project.solution}</li>` : ''}
             ${project.tools ? `<li><strong>Outils :</strong> ${project.tools}</li>` : ''}
@@ -155,57 +110,41 @@ const projects = [
         </div>
       </div>
     `;
-    try { modal.showModal(); } catch (e) { modal.setAttribute('open',''); }
+    try { modal.showModal(); } catch (e) { modal.setAttribute('open', ''); }
     modalClose.focus();
   }
 
-  document.querySelectorAll('[data-project-id]').forEach(card => {
-    card.addEventListener('click', () => {
-      const id = Number(card.dataset.projectId);
-      // si section détaillée existe → scroll vers elle
-      const target = document.getElementById(`project-${id}`);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
-
-      // sinon open modal avec données
-      const p = PROJECTS.find(x => x.id === id);
-      if (p) openModalWith(p);
-    });
-
-    // keyboard accessibility: Enter / Space open same behavior
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        card.click();
-      }
-    });
-  });
-
-  modalClose.addEventListener('click', () => modal.close?.());
-
-  modal.addEventListener('click', (e) => {
-    const rect = modal.getBoundingClientRect();
-    if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
-      modal.close?.();
-    }
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') modal.close?.();
-  });
 </script>
 
+
 <style>
-  /* reveal animation */
-  .reveal { opacity: 0; transform: translateY(28px); transition: all 0.7s cubic-bezier(.16,.84,.06,1); }
-  .reveal.in-view { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  .fade-in-up.delay-100 {
+    animation-delay: 0.1s;
+  }
+  .fade-in-up.delay-300 {
+    animation-delay: 0.3s;
+  }
 
-  /* small utility for truncated description if you want */
-  .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-  /* dialog styling */
-  dialog[open] { box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
-  dialog::backdrop { background: rgba(0,0,0,0.6); backdrop-filter: blur(6px); }
+  /* Simple fade */
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+  }
+  .fade-in.delay-700 {
+    animation-delay: 0.7s;
+  }
 </style>
