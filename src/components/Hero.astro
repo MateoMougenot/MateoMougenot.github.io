@@ -1,0 +1,103 @@
+---
+---
+<section
+  id="hero"
+  class="relative h-screen w-full overflow-hidden flex items-center justify-center"
+>
+  <!-- Background Video -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="w-full h-full object-cover"
+    >
+      <source src="/Motion-Design-Reel.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la lecture vidéo.
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-left px-6 max-w-5xl fade-in-up">
+    <div class="mb-6 fade-in-up delay-100">
+      <h1 class="text-white mb-4 tracking-tight leading-none text-[clamp(2.5rem,8vw,6rem)]">
+        Matéo Mougenot
+      </h1>
+      <p class="text-white/70 tracking-wide text-[clamp(1.25rem,3vw,2rem)]">
+        Motion & Video Designer
+      </p>
+    </div>
+
+    <div class="mt-12 fade-in-up delay-300">
+      <a
+        href="#projets"
+        class="group relative inline-block px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300"
+      >
+        <span class="relative z-10">Découvrir mes projets</span>
+        <div class="absolute inset-0 bg-white/0 group-hover:bg-white/5 rounded-lg transition-all duration-300"></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 fade-in delay-700">
+    <div class="animate-bounce-slow text-white/50">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Fade-in-up animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  .fade-in-up.delay-100 {
+    animation-delay: 0.1s;
+  }
+  .fade-in-up.delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  /* Simple fade */
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+  }
+  .fade-in.delay-700 {
+    animation-delay: 0.7s;
+  }
+
+  /* Chevron animation */
+  @keyframes bounceSlow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  .animate-bounce-slow {
+    animation: bounceSlow 2s ease-in-out infinite;
+  }
+</style>
