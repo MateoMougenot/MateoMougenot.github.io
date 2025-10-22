@@ -5,14 +5,15 @@ import ProjectDetail from './ProjectDetail.astro';
 const projects = [
   {
     id: 1,
-    title: 'Brand Identity Motion',
+    title: 'Travis Scott - My eyes | Motion',
     role: 'Motion Designer',
-    image: '../../public/video-icon.png',
+    image: '/cover-travis-scott.jpg',
     description: "Création d'une identité visuelle animée complète pour une startup tech.",
     challenge: "Créer une identité cohérente et moderne qui se démarque dans un secteur saturé.",
     solution: "Développement d'un système de design modulaire avec animations fluides.",
     tools: 'After Effects, Premiere Pro, Illustrator',
     featured: true,
+    slug: 'my-eyes-motion',
   },
   {
     id: 2,
@@ -24,20 +25,10 @@ const projects = [
     solution: "Montage rythmé et étalonnage néon pour ambiance immersive.",
     tools: 'Premiere Pro, DaVinci Resolve, After Effects',
     featured: true,
+    slug: 'urban-stories',
   },
-  {
-    id: 2,
-    title: 'Test',
-    role: 'Monteur Vidéo / Coloriste',
-    image: 'https://images.unsplash.com/photo-1618852432867-f98fa0616cbb?...',
-    description: "Court-métrage documentaire explorant la vie nocturne urbaine.",
-    challenge: "Capturer l'essence de la ville la nuit avec narration cohérente.",
-    solution: "Montage rythmé et étalonnage néon pour ambiance immersive.",
-    tools: 'Premiere Pro, DaVinci Resolve, After Effects',
-    featured: true,
-  },
-  // ... autres projets (inchangés)
 ];
+
 ---
 
 <section id="projets" class="relative py-32 px-6 bg-black text-white">
@@ -53,7 +44,7 @@ const projects = [
     <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
       {projects.map((pr, i) => (
-        <ProjectCard id={pr.id} title={pr.title} role={pr.role} image={pr.image} index={i} />
+        <ProjectCard id={pr.id} title={pr.title} role={pr.role} image={pr.image} index={i} slug={pr.slug} />
       ))}
     </div>
 
