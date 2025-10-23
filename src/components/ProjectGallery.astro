@@ -5,7 +5,7 @@ import ProjectDetail from './ProjectDetail.astro';
 const projects = [
   {
     id: 1,
-    title: 'Travis Scott - My eyes | Motion',
+    title: 'Travis Scott - My eyes',
     role: 'Motion Design',
     image: '/cover-travis-scott.jpg',
     description: "Création d'une identité visuelle animée complète pour une startup tech.",
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Spotify motion',
+    title: 'Spotify logo',
     role: 'Motion Design',
     image: '/spotify-motion.png',
     description: "Animation du logo de spotify",
@@ -51,6 +51,42 @@ const projects = [
     featured: true,
     slug: 'prise-pour-cible',
   },
+        {
+    id: 5,
+    title: 'Lumiping',
+    role: 'Vidéo promotionelle',
+    image: '/lumiping.png',
+    description: "Vidéo promotionelle d'un nouveau jeu au sein d'un espace de coworking sur le thème d'un tennis de table revisité",
+    challenge: "Parvenir à donner envie aux membres de participer à ce nouveau jeu",
+    solution: "Mettre en situation l'activité et l'utilisation de son application",
+    tools: 'Premiere Pro, Photoshop',
+    featured: false,
+    slug: 'lumiping',
+  },
+          {
+    id: 6,
+    title: 'Genshin-killer',
+    role: 'Vidéo humouristique/gaming',
+    image: '/Genshin-killer.jpg',
+    description: "La première vraie vidéo youtube sur laquelle j'ai travaillé",
+    challenge: "Parvenir à redynamiser une chaine inactive depuis un temps",
+    solution: "Réaliser un best-of dynamique",
+    tools: 'Premiere Pro, After effects',
+    featured: false,
+    slug: 'Genshin-killer',
+  },
+            {
+    id: 7,
+    title: 'Interviews étudiants',
+    role: 'Interviews type konbini',
+    image: '/konbini.webp',
+    description: "Mes premières réalisations pour lesquelles j'ai dû gérer préparation, tournage, et postproduction",
+    challenge: "Parvenir à redonner une nouvelle image à une institution aux airs trop fermés",
+    solution: "S'adapter avec un format dynamique et destiné aux jeunes",
+    tools: 'Premiere Pro, Photoshop',
+    featured: false,
+    slug: 'Interviews-étudiants',
+  },
 ];
 
 ---
@@ -59,9 +95,9 @@ const projects = [
   <div class="max-w-7xl mx-auto">
     <!-- Header -->
     <div class="mb-16 fade-in-up">
-      <h2 class="text-white mb-4 tracking-tight text-[clamp(2rem,6vw,4rem)] font-semibold fade-in-up delay-100">Mes derniers projets</h2>
+      <h2 class="text-white mb-4 tracking-tight text-[clamp(2rem,6vw,4rem)] font-semibold fade-in-up delay-100">Mes projets</h2>
       <p class="text-white/60 max-w-2xl fade-in-up delay-300">
-        Une sélection de mes travaux récents en motion design et montage vidéo.
+        Une sélection de mes travaux récents.
       </p>
     </div>
 
@@ -70,6 +106,14 @@ const projects = [
       {projects.map((pr, i) => (
         <ProjectCard id={pr.id} title={pr.title} role={pr.role} image={pr.image} index={i} slug={pr.slug} />
       ))}
+    </div>
+
+        <!-- Header -->
+    <div class="mb-16 fade-in-up">
+      <h2 class="text-white mb-4 tracking-tight text-[clamp(2rem,6vw,4rem)] font-semibold fade-in-up delay-100">Mes favoris</h2>
+      <p class="text-white/60 max-w-2xl fade-in-up delay-300">
+        Évidemment parmis toutes mes réalisations il y a mes petits préférés...
+      </p>
     </div>
 
     <!-- Featured Project Details -->
