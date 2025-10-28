@@ -9,6 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: 'https://MateoMougenot.github.io',
-  base: "/Portfolio-Mateo/",
 });
 
