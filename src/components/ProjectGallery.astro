@@ -1,0 +1,263 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import ProjectDetail from "./ProjectDetail.astro";
+
+const projects = [
+  {
+    id: 1,
+    title: "Travis Scott - My eyes",
+    role: "Motion Design",
+    image: "/cover-travis-scott.jpg",
+    description:
+      "Création d'une identité visuelle animée complète pour une startup tech.",
+    challenge:
+      "Créer une identité cohérente et moderne qui se démarque dans un secteur saturé.",
+    solution:
+      "Développement d'un système de design modulaire avec animations fluides.",
+    tools: "After Effects, Premiere Pro, Illustrator",
+    featured: true,
+    slug: "my-eyes-motion",
+  },
+  {
+    id: 2,
+    title: "Spotify logo",
+    role: "Motion Design",
+    image: "/spotify-motion.png",
+    description: "Animation du logo de spotify",
+    challenge:
+      "Partir d'un élément représentant la musique pour finir sur le logo",
+    solution: "Partir d'ondes sonores transitionnant vers le logo de Spotify",
+    tools: "After Effects",
+    featured: true,
+    slug: "spotify-motion",
+  },
+  {
+    id: 3,
+    title: "Digital cleanup day",
+    role: "Motion Design",
+    image: "/digital-cleanup-day.png",
+    description: "Spot publicitaire d'un évènement",
+    challenge: "Parvenir à faire passer un message écologique en animation",
+    solution: "...",
+    tools: "After Effects",
+    featured: false,
+    slug: "digital-cleanup-day",
+  },
+  {
+    id: 4,
+    title: "Prise pour cible",
+    role: "Court métrage",
+    image: "/prise-pour-cible.png",
+    description: "Court métrage sans musique mettant en scène un échange",
+    challenge: "Parvenir à intégrer l'échange d'un objet au sein de la vidéo",
+    solution: "L'objet échangé fût la trousse volée",
+    tools: "Premiere Pro, Audition",
+    featured: true,
+    slug: "prise-pour-cible",
+  },
+  {
+    id: 5,
+    title: "Lumiping",
+    role: "Vidéo promotionelle",
+    image: "/lumiping.png",
+    description:
+      "Vidéo promotionelle d'un nouveau jeu au sein d'un espace de coworking sur le thème d'un tennis de table revisité",
+    challenge:
+      "Parvenir à donner envie aux membres de participer à ce nouveau jeu",
+    solution:
+      "Mettre en situation l'activité et l'utilisation de son application",
+    tools: "Premiere Pro, Photoshop",
+    featured: false,
+    slug: "lumiping",
+  },
+  {
+    id: 6,
+    title: "Genshin-killer",
+    role: "Vidéo humouristique/gaming",
+    image: "/Genshin-killer.jpg",
+    description: "La première vraie vidéo youtube sur laquelle j'ai travaillé",
+    challenge: "Parvenir à redynamiser une chaine inactive depuis un temps",
+    solution: "Réaliser un best-of dynamique",
+    tools: "Premiere Pro, After effects",
+    featured: false,
+    slug: "Genshin-killer",
+  },
+  {
+    id: 7,
+    title: "Interviews étudiants",
+    role: "Interviews type konbini",
+    image: "/konbini.webp",
+    description:
+      "Mes premières réalisations pour lesquelles j'ai dû gérer préparation, tournage, et postproduction",
+    challenge:
+      "Parvenir à redonner une nouvelle image à une institution aux airs trop fermés",
+    solution: "S'adapter avec un format dynamique et destiné aux jeunes",
+    tools: "Premiere Pro, Photoshop, After effects",
+    featured: false,
+    slug: "Interviews-étudiants",
+  },
+  {
+    id: 8,
+    title: "Communication d'une institution",
+    role: "Vidéo, Graphisme print, Motion design",
+    image: "/beaupeyrat.png",
+    description:
+      "Durant un stage au sein de l'institution Beaupeyrat de Limoges, j'ai pu m'occuper de la communication de leur partie campus sur une durée de 12 semaines",
+    challenge:
+      "Parvenir à redonner une nouvelle image à une institution aux airs trop fermés",
+    solution: "S'adapter avec un format dynamique et destiné aux jeunes sous les contraintes d'une charte graphique déjà existante",
+    tools: "Premiere Pro, Photoshop, After effects",
+    featured: true,
+    slug: "beaupeyrat",
+  },
+];
+---
+
+<section id="projets" class="relative py-32 px-6 bg-black text-white">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="mb-16 fade-in-up">
+      <h2
+        class="text-white mb-4 tracking-tight text-[clamp(2rem,6vw,4rem)] font-semibold fade-in-up delay-100"
+      >
+        Mes projets
+      </h2>
+      <p class="text-white/60 max-w-2xl fade-in-up delay-300">
+        Une sélection de mes travaux récents.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+      {
+        projects.map((pr, i) => (
+          <ProjectCard
+            id={pr.id}
+            title={pr.title}
+            role={pr.role}
+            image={pr.image}
+            index={i}
+            slug={pr.slug}
+          />
+        ))
+      }
+    </div>
+
+    <!-- Header -->
+    <div class="mb-16 fade-in-up">
+      <h2
+        class="text-white mb-4 tracking-tight text-[clamp(2rem,6vw,4rem)] font-semibold fade-in-up delay-100"
+      >
+        Mes favoris
+      </h2>
+      <p class="text-white/60 max-w-2xl fade-in-up delay-300">
+        Évidemment parmis toutes mes réalisations il y a mes petits préférés...
+      </p>
+    </div>
+
+    <!-- Featured Project Details -->
+    <div class="space-y-32">
+      {
+        projects
+          .filter((p) => p.featured)
+          .map((pr, i) => <ProjectDetail project={pr} index={i} />)
+      }
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <dialog
+    id="projectModal"
+    class="rounded-2xl p-6 w-[min(92%,900px)] bg-black/95 text-white border border-white/5 shadow-2xl backdrop-blur-md"
+  >
+    <button
+      id="modalClose"
+      class="absolute top-4 right-4 text-white/60 hover:text-white">✕</button
+    >
+    <div id="modalContent" class="space-y-4"></div>
+  </dialog>
+</section>
+
+<script>
+  const PROJECTS = JSON.parse(
+    decodeURIComponent("${encodeURIComponent(JSON.stringify(projects))}"),
+  );
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((ent) => {
+        if (ent.isIntersecting) {
+          ent.target.classList.add("opacity-100", "translate-y-0");
+          observer.unobserve(ent.target);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  // Modal logic
+  const modal = document.getElementById("projectModal");
+  const modalContent = document.getElementById("modalContent");
+  const modalClose = document.getElementById("modalClose");
+
+  function openModalWith(project) {
+    modalContent.innerHTML = `
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-lg overflow-hidden">
+          <img src="${project.image}" alt="${project.title}" class="w-full h-64 object-cover rounded-lg" />
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold mb-2">${project.title}</h3>
+          <p class="text-white/60 mb-4">${project.role}</p>
+          <p class="text-white/60 mb-4">${project.description}</p>
+          <ul class="text-white/60 space-y-2 text-sm leading-relaxed">
+            ${project.challenge ? `<li><strong>Challenge :</strong> ${project.challenge}</li>` : ""}
+            ${project.solution ? `<li><strong>Solution :</strong> ${project.solution}</li>` : ""}
+            ${project.tools ? `<li><strong>Outils :</strong> ${project.tools}</li>` : ""}
+          </ul>
+        </div>
+      </div>
+    `;
+    try {
+      modal.showModal();
+    } catch (e) {
+      modal.setAttribute("open", "");
+    }
+    modalClose.focus();
+  }
+</script>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  .fade-in-up.delay-100 {
+    animation-delay: 0.1s;
+  }
+  .fade-in-up.delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  /* Simple fade */
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+  }
+  .fade-in.delay-700 {
+    animation-delay: 0.7s;
+  }
+</style>

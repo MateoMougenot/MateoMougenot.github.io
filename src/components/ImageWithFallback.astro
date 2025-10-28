@@ -1,0 +1,19 @@
+---
+/*
+  Simple wrapper image avec fallback inline (data URI).
+  Props:
+    - src (string)
+    - alt (string)
+    - class (string) optional
+*/
+const { src, alt = '', class: className = '' } = Astro.props;
+const FALLBACK =
+  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23121212'/%3E%3Ctext x='50%25' y='50%25' fill='%23ffffff' font-size='28' text-anchor='middle' dominant-baseline='middle'%3EImage unavailable%3C/text%3E%3C/svg%3E";
+---
+<img
+  src={src}
+  alt={alt}
+  class={className}
+  loading="lazy"
+  onerror={`this.onerror=null;this.src='${FALLBACK}';`}
+/>

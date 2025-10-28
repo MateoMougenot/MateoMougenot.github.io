@@ -1,0 +1,95 @@
+---
+/*
+  Props:
+    - project: object
+    - index: number
+*/
+const { project, index = 0 } = Astro.props;
+---
+
+
+
+<section
+  id={`project-${project.id}`}
+  class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal"
+>
+  <!-- Image / preview side -->
+  <div class={`relative rounded-2xl aspect-video bg-black/20`}>
+    <a
+      href={`/projects/${project.slug}`}
+      class="flex items-center justify-center overflow-hidden rounded-3xl max-w-150 max-h-90"
+    >
+      <img
+        src={project.image}
+        alt={project.title}
+        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+        loading="lazy"
+      />
+    </a>
+    <div
+      class="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent pointer-events-none"
+    >
+    </div>
+
+    <!-- Play / video placeholder -->
+    <!-- <div class="absolute inset-0 flex items-center justify-center ">
+      <div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+        <div class="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1" />
+      </div>
+    </div> -->
+
+    <!-- Tools Badge -->
+    <div
+      class="absolute -bottom-3 left-3 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full transition-transform duration-500 hover:scale-105"
+    >
+      <p class="text-white/90 text-sm">{project.tools}</p>
+    </div>
+  </div>
+
+  <!-- Content side -->
+  <div>
+    <div class="space-y-8">
+      <div>
+        <p class="text-white/50 mb-2 uppercase tracking-widest text-sm">
+          {project.role}
+        </p>
+        <a href={`/projects/${project.slug}`}>
+          <h3
+            class="text-white mb-4 tracking-tight text-[clamp(1.75rem,4vw,3rem)]"
+          >
+            {project.title}
+          </h3>
+        </a>
+        <p class="text-white/70 leading-relaxed">{project.description}</p>
+      </div>
+
+      <div class="space-y-4">
+        <div
+          class="p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-sky-700 transition delay-50 duration-300"
+        >
+          <h4
+            class="text-white mb-3 tracking-tight text-[clamp(1rem,2vw,1.25rem)]"
+          >
+            Challenge
+          </h4>
+          <p class="text-white/60 leading-relaxed text-sm">
+            {project.challenge}
+          </p>
+        </div>
+
+        <div
+          class="p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-blue-950 transition delay-50 duration-300"
+        >
+          <h4
+            class="text-white mb-3 tracking-tight text-[clamp(1rem,2vw,1.25rem)]"
+          >
+            Solution
+          </h4>
+          <p class="text-white/60 leading-relaxed text-sm">
+            {project.solution}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

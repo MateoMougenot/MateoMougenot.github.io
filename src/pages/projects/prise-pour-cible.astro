@@ -1,0 +1,219 @@
+---
+import BasicLayout from "../../layout/BasicLayout.astro";
+const { videoId = "Uq4DlovpIlI" } = Astro.props; // ID YouTube passé en prop si besoin
+
+const project = {
+    title: "Prise pour cible",
+    role: "Court métrage",
+    image: "/prise-pour-cible.png",
+    description: "Court métrage sans musique mettant en scène un échange",
+    challenge: "Parvenir à intégrer l'échange d'un objet au sein de la vidéo",
+    solution: "L'objet échangé fût la trousse volée",
+    tools: "Premiere Pro, Audition",
+};
+---
+
+<BasicLayout title="Spotify Motion">
+    <div class="min-h-screen bg-black">
+        <!-- Bouton retour -->
+        <div class="px-6 py-6 w-fit">
+            <a
+                href="/"
+                class="group flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-white group-hover:-translate-x-1 transition-transform"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="white"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span class="text-white">Retour</span>
+            </a>
+        </div>
+
+        <!-- Section Hero -->
+        <section class="relative px-6 pb-12">
+            <div
+                class="max-w-7xl mx-auto mb-12 opacity-0 translate-y-5 animate-fadeInUp"
+            >
+                <p class="text-white/50 mb-4 uppercase tracking-widest text-sm">
+                    {project.role}
+                </p>
+                <h1
+                    class="text-white mb-6 tracking-tight text-[clamp(2.5rem,8vw,5rem)]"
+                >
+                    {project.title}
+                </h1>
+                <p class="text-white/70 max-w-3xl leading-relaxed text-lg">
+                    {project.description}
+                </p>
+            </div>
+
+            <!-- Image principale -->
+            <div
+                class="max-w-7xl mx-auto overflow-hidden rounded-3xl bg-black/20 group opacity-0 translate-y-5 animate-fadeInUp delay-200"
+            >
+                <div
+                    class="relative w-full overflow-hidden rounded-2xl bg-black aspect-video"
+                >
+                    <iframe
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        class="absolute top-0 left-0 w-full h-full"></iframe>
+                </div>
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent pointer-events-none"
+                >
+                </div>
+
+                <!-- Bouton Play -->
+                <!-- <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="text-white ml-1" width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+      </div> -->
+
+                <!-- Outils -->
+                <div
+                    class="absolute bottom-8 left-8 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full"
+                >
+                    <p class="text-white/90">{project.tools}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Détails -->
+        <section class="px-6 py-20">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12"
+            >
+                <!-- Challenge -->
+                <div
+                    class="space-y-6 opacity-0 translate-x-[-20px] animate-fadeInLeft"
+                >
+                    <div
+                        class="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
+                    >
+                        <div
+                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6"
+                        >
+                            <div
+                                class="w-6 h-6 border-2 border-white/50 rounded-full"
+                            >
+                            </div>
+                        </div>
+                        <h2
+                            class="text-white mb-4 tracking-tight text-[clamp(1.5rem,3vw,2rem)]"
+                        >
+                            Challenge
+                        </h2>
+                        <p class="text-white/60 leading-relaxed">
+                            {project.challenge}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Solution -->
+                <div
+                    class="space-y-6 opacity-0 translate-x-[20px] animate-fadeInRight delay-200"
+                >
+                    <div
+                        class="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
+                    >
+                        <div
+                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6"
+                        >
+                            <div class="w-6 h-6 bg-white/50 rounded"></div>
+                        </div>
+                        <h2
+                            class="text-white mb-4 tracking-tight text-[clamp(1.5rem,3vw,2rem)]"
+                        >
+                            Solution
+                        </h2>
+                        <p class="text-white/60 leading-relaxed">
+                            {project.solution}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="px-6 py-32 text-center">
+            <div
+                class="max-w-7xl mx-auto opacity-0 translate-y-5 animate-fadeInUp"
+            >
+                <h2
+                    class="text-white mb-8 tracking-tight text-[clamp(2rem,5vw,3rem)]"
+                >
+                    Voir tous les projets
+                </h2>
+                <a
+                    href="/#projets"
+                    class="px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300"
+                >
+                    Retour à la galerie
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease forwards;
+        }
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+    </style>
+</BasicLayout>

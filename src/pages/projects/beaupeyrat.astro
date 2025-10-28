@@ -1,0 +1,409 @@
+---
+import BasicLayout from "../../layout/BasicLayout.astro";
+const { videoId = "HzB_P3jOI7Q" } = Astro.props; // ID YouTube passé en prop si besoin
+
+const project = {
+    title: "Communication d'une institution",
+    role: "Vidéo, Graphisme print, Motion design",
+    image: "/beaupeyrat.png",
+    description:
+        "Durant un stage au sein de l'institution Beaupeyrat de Limoges, j'ai pu m'occuper de la communication de leur partie campus sur une durée de 12 semaines",
+    challenge:
+        "Parvenir à redonner une nouvelle image à une institution aux airs trop fermés",
+    solution:
+        "S'adapter avec un format dynamique et destiné aux jeunes sous les contraintes d'une charte graphique déjà existante",
+    tools: "Premiere Pro, Photoshop, After effects",
+};
+---
+
+<BasicLayout title="Communication d'une institution">
+    <div class="min-h-screen bg-black">
+        <!-- Bouton retour -->
+        <div class="px-6 py-6 w-fit">
+            <a
+                href="/"
+                class="group flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-white group-hover:-translate-x-1 transition-transform"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="white"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span class="text-white">Retour</span>
+            </a>
+        </div>
+
+        <!-- Section Hero -->
+        <section class="relative px-6 pb-12">
+            <div
+                class="max-w-7xl mx-auto mb-12 opacity-0 translate-y-5 animate-fadeInUp"
+            >
+                <p class="text-white/50 mb-4 uppercase tracking-widest text-sm">
+                    {project.role}
+                </p>
+                <h1
+                    class="text-white mb-6 tracking-tight text-[clamp(2.5rem,8vw,5rem)]"
+                >
+                    {project.title}
+                </h1>
+                <p class="text-white/70 max-w-3xl leading-relaxed text-lg">
+                    {project.description}
+                </p>
+            </div>
+
+            <!-- Détails -->
+            <section class="px-6 py-20">
+                <div
+                    class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12"
+                >
+                    <!-- Challenge -->
+                    <div
+                        class="space-y-6 opacity-0 translate-x-[-20px] animate-fadeInLeft"
+                    >
+                        <div
+                            class="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
+                        >
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6"
+                            >
+                                <div
+                                    class="w-6 h-6 border-2 border-white/50 rounded-full"
+                                >
+                                </div>
+                            </div>
+                            <h2
+                                class="text-white mb-4 tracking-tight text-[clamp(1.5rem,3vw,2rem)]"
+                            >
+                                Challenge
+                            </h2>
+                            <p class="text-white/60 leading-relaxed">
+                                {project.challenge}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Solution -->
+                    <div
+                        class="space-y-6 opacity-0 translate-x-[20px] animate-fadeInRight delay-200"
+                    >
+                        <div
+                            class="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
+                        >
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6"
+                            >
+                                <div class="w-6 h-6 bg-white/50 rounded"></div>
+                            </div>
+                            <h2
+                                class="text-white mb-4 tracking-tight text-[clamp(1.5rem,3vw,2rem)]"
+                            >
+                                Solution
+                            </h2>
+                            <p class="text-white/60 leading-relaxed">
+                                {project.solution}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="px-6 py-20">
+            <div
+                class="max-w-7xl mx-auto overflow-hidden rounded-3xl bg-black/20 group opacity-0 translate-y-5 animate-fadeInUp delay-200"
+            >
+                <div
+                    class="mx-auto mb-12 opacity-0 translate-y-5 animate-fadeInUp"
+                >
+                    <p
+                        class="text-white/50 mb-4 uppercase tracking-widest text-lg"
+                    >
+                        Aftermovie – Soirée des partenaires
+                    </p>
+                    <p class="text-white/70 max-w-3xl leading-relaxed text-lg">
+                        J’ai assuré la réalisation complète de la vidéo de
+                        l’événement, du tournage à la post-production.
+                        L’objectif : retranscrire l’ambiance conviviale de la
+                        soirée et valoriser les échanges entre partenaires du
+                        campus.
+                    </p>
+                </div>
+
+                <div class="aspect-video w-full rounded-3xl overflow-hidden">
+                    <iframe
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        class="w-full h-full object-cover"></iframe>
+                </div>
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent pointer-events-none"
+                >
+                </div>
+
+                <!-- Outils -->
+                <div
+                    class="absolute bottom-8 left-8 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full"
+                >
+                    <p class="text-white/90">{project.tools}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Soirée apéritif -->
+        <section class="px-6 py-20">
+            <!-- Soirée apéritif BDE -->
+            <div
+                class="max-w-7xl mx-auto overflow-hidden rounded-3xl bg-black/20 group opacity-0 translate-y-5 animate-fadeInUp delay-200"
+            >
+                <div
+                    class="mx-auto mb-12 opacity-0 translate-y-5 animate-fadeInUp"
+                >
+                    <p
+                        class="text-white/50 mb-4 uppercase tracking-widest text-lg"
+                    >
+                        Aftermovie – Apéritif étudiants & professeurs (Bureau
+                        des étudiants, Campus Beaupeyrat)
+                    </p>
+                    <p class="text-white/70 max-w-3xl leading-relaxed text-lg">
+                        J’ai réalisé la vidéo complète de l’événement, du
+                        tournage au montage. L’objectif : capturer les échanges
+                        et la convivialité de ce moment de partage entre
+                        étudiants et enseignants, pour en faire un souvenir
+                        dynamique et fédérateur.
+                    </p>
+                </div>
+
+                <video
+                    id="background-video"
+                    autoplay
+                    loop
+                    playsinline
+                    muted
+                    class="w-full h-full object-cover rounded-3xl"
+                >
+                    <source src="/Video apero.mp4" type="video/mp4" />
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+                <button
+                    id="mute-toggle"
+                    class="absolute bottom-8 right-8 z-20 p-3 rounded-full bg-white/15 backdrop-blur-sm text-white hover:bg-white/25 transition-colors duration-200"
+                    aria-label="Toggle mute/unmute"
+                >
+                    <svg
+                        id="icon-muted"
+                        viewBox="-0.5 0 25 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6"
+                    >
+                        <path
+                            d="M10.9395 17.72C12.9395 19.5 15.3895 20.72 16.5495 20.33C18.6495 19.55 18.9995 15.3299 18.9995 12.4099C18.9995 11.5999 18.9995 10.68 18.8895 9.77002"
+                            stroke="#ffffff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path
+                            d="M18.1292 6.28008C18.0012 5.89129 17.795 5.53273 17.5233 5.22661C17.2516 4.9205 16.9201 4.67327 16.5493 4.50005C15.3193 4.04005 12.7093 5.49996 10.5493 7.40996H8.94922C7.88835 7.40996 6.87093 7.83145 6.12079 8.58159C5.37064 9.33174 4.94922 10.3491 4.94922 11.41V13.41C4.9489 14.1811 5.17151 14.936 5.59021 15.5835C6.00892 16.2311 6.60585 16.7438 7.3092 17.06"
+                            stroke="#ffffff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path
+                            d="M22 2.42004L2 22.42"
+                            stroke="#ffffff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+
+                    <svg
+                        id="icon-unmuted"
+                        viewBox="-0.5 0 25 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 hidden"
+                    >
+                        <path
+                            d="M12.5493 4.50005C11.3193 4.04005 8.70926 5.49996 6.54926 7.40996H4.94922C3.88835 7.40996 2.87093 7.83145 2.12079 8.58159C1.37064 9.33174 0.949219 10.3491 0.949219 11.41V13.41C0.949219 14.4708 1.37064 15.4883 2.12079 16.2385C2.87093 16.9886 3.88835 17.41 4.94922 17.41H6.54926C8.65926 19.35 11.2693 20.78 12.5493 20.33C14.6493 19.55 14.9992 15.33 14.9992 12.41C14.9992 9.48996 14.6493 5.28005 12.5493 4.50005Z"
+                            stroke="#ffffff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent"
+                >
+                </div>
+
+                <!-- Outils -->
+                <div
+                    class="absolute bottom-8 left-8 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full"
+                >
+                    <p class="text-white/90">{project.tools}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stand parapluie -->
+        <section class="px-6 py-20">
+            <div
+                class="max-w-7xl mx-auto overflow-hidden rounded-3xl bg-black/20 group opacity-0 translate-y-5 animate-fadeInUp delay-200"
+            >
+                <div
+                    class="mx-auto mb-12 opacity-0 translate-y-5 animate-fadeInUp"
+                >
+                    <p
+                        class="text-white/50 mb-4 uppercase tracking-widest text-lg"
+                    >
+                        Création visuelle – Stand parapluie
+                    </p>
+                    <p class="text-white/70 max-w-3xl leading-relaxed text-lg">
+                        J’ai conçu le visuel grand format destiné à habiller le
+                        stand parapluie du campus. L’objectif : créer un design
+                        clair et attractif reflétant l’identité visuelle de
+                        l’établissement lors des salons et événements.
+                    </p>
+                </div>
+
+                <div class="w-fit flex rounded-3xl overflow-hidden gap-2">
+                    <img
+                        class="object-cover"
+                        src="/stand-parapluie-1.png"
+                        alt=""
+                    />
+                    <img
+                        class="object-cover"
+                        src="/stand-parapluie-2.png"
+                        alt=""
+                    />
+                </div>
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent"
+                >
+                </div>
+
+                <!-- Outils -->
+                <div
+                    class="absolute bottom-8 left-8 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full"
+                >
+                    <p class="text-white/90">{project.tools}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="px-6 py-32 text-center">
+            <div
+                class="max-w-7xl mx-auto opacity-0 translate-y-5 animate-fadeInUp"
+            >
+                <h2
+                    class="text-white mb-8 tracking-tight text-[clamp(2rem,5vw,3rem)]"
+                >
+                    Voir tous les projets
+                </h2>
+                <a
+                    href="/#projets"
+                    class="px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300"
+                >
+                    Retour à la galerie
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease forwards;
+        }
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+    </style>
+</BasicLayout>
+
+<script>
+    // S'assurer que le DOM est chargé
+    document.addEventListener("DOMContentLoaded", () => {
+        const video = document.getElementById("background-video");
+        const toggleButton = document.getElementById("mute-toggle");
+        const iconMuted = document.getElementById("icon-muted");
+        const iconUnmuted = document.getElementById("icon-unmuted");
+
+        if (video && toggleButton) {
+            // 🚨 Mise à jour initiale: la vidéo doit être MUETTE pour l'autoplay
+            video.muted = true;
+            iconMuted.classList.remove("hidden");
+            iconUnmuted.classList.add("hidden");
+
+            toggleButton.addEventListener("click", () => {
+                // Inverse l'état muted
+                video.muted = !video.muted;
+
+                // Met à jour les icônes
+                if (video.muted) {
+                    // Si muet : afficher l'icône Mute (barrée)
+                    iconMuted.classList.remove("hidden");
+                    iconUnmuted.classList.add("hidden");
+                } else {
+                    // Si non muet : afficher l'icône Unmute (haut-parleur)
+                    iconMuted.classList.add("hidden");
+                    iconUnmuted.classList.remove("hidden");
+
+                    // 💡 Astuce UX : Si l'utilisateur clique pour activer le son,
+                    // on peut potentiellement retirer l'autoplay pour éviter de futurs resets (bien que non critique ici)
+                }
+            });
+        }
+    });
+</script>
