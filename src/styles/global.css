@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @custom-variant hover (&:hover);
+
+body{
+    scroll-behavior: smooth;
+}

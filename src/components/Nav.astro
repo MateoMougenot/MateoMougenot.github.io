@@ -1,0 +1,103 @@
+---
+const links = [
+  { name: "Accueil", href: "#hero" },
+  { name: "Projets", href: "#projets" },
+  { name: "À propos", href: "#apropos" },
+];
+---
+
+<nav class="fixed top-6 left-0 right-0 z-50 flex items-center justify-center">
+  <!-- Desktop nav -->
+  <ul class="hidden md:flex gap-6 px-8 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white text-sm">
+    {links.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          class="nav-link relative transition-colors duration-300 hover:text-white/90 cursor-pointer"
+        >
+          {link.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <!-- Mobile burger -->
+  <button
+    id="menu-toggle"
+    class="md:hidden absolute right-6 top-10 flex items-center justify-center w-11 h-11 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white text-lg"
+  >
+    ☰
+  </button>
+
+  <!-- Mobile dropdown -->
+  <div
+    id="mobile-menu"
+    class="hidden flex-col items-center gap-4 mt-4 p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white text-base absolute right-6 top-20 w-[75vw] shadow-lg transition-all duration-300"
+  >
+    {links.map((link) => (
+      <a
+        href={link.href}
+        class="nav-link block w-full text-center py-2 border-b border-white/10 last:border-none"
+      >
+        {link.name}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  nav ul li a {
+    position: relative;
+  }
+
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".nav-link");
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+
+    // Scroll fluide
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").replace("#", "");
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: "smooth",
+          });
+        }
+
+        // Fermer le menu mobile après clic
+        if (window.innerWidth < 768) menu.classList.add("hidden");
+      });
+    });
+
+    // Toggle du menu mobile
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
