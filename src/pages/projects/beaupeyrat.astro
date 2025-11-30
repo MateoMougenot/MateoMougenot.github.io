@@ -1,19 +1,13 @@
 ---
 import BasicLayout from "../../layout/BasicLayout.astro";
-const { videoId = "HzB_P3jOI7Q" } = Astro.props; // ID YouTube passé en prop si besoin
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-    title: "Communication d'une institution",
-    role: "Vidéo, Graphisme print, Motion design",
-    image: "/beaupeyrat.png",
-    description:
-        "Durant un stage au sein de l'institution Beaupeyrat de Limoges, j'ai pu m'occuper de la communication de leur partie campus sur une durée de 12 semaines",
-    challenge:
-        "Parvenir à redonner une nouvelle image à une institution aux airs trop fermés",
-    solution:
-        "S'adapter avec un format dynamique et destiné aux jeunes sous les contraintes d'une charte graphique déjà existante",
-    tools: "Premiere Pro, Photoshop, After effects",
-};
+const { videoId = "HzB_P3jOI7Q" } = Astro.props; // ID YouTube passé en prop si besoin
+const project = getProjectBySlug("beaupeyrat");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 <BasicLayout title="Communication d'une institution">

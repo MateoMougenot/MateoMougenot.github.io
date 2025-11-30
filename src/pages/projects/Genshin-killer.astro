@@ -1,16 +1,13 @@
 ---
 import BasicLayout from "../../layout/BasicLayout.astro";
-const { videoId = "Gro4j4nwh-Q" } = Astro.props; // ID YouTube passé en prop si besoin
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-    title: 'Genshin killer',
-    role: 'Vidéo humouristique/gaming',
-    image: '/Genshin-killer.jpg',
-    description: "La première vraie vidéo youtube sur laquelle j'ai travaillé. Elle fût réalisée dans le cadre d'une collaboration avec un petit créateur de contenu, pour lequel j'avais déjà travaillé au format court auparavant sur de nombreuses vidéos",
-    challenge: "Parvenir à redynamiser une chaine inactive depuis un temps",
-    solution: "Réaliser un best-of dynamique",
-    tools: 'Premiere Pro, After effects',
-};
+const { videoId = "Gro4j4nwh-Q" } = Astro.props; // ID YouTube passé en prop si besoin
+const project = getProjectBySlug("Genshin-killer");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 <BasicLayout title="Spotify Motion">

@@ -1,16 +1,13 @@
 ---
 import BasicLayout from "../../layout/BasicLayout.astro";
-const { videoId = "Uq4DlovpIlI" } = Astro.props; // ID YouTube passé en prop si besoin
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-    title: "Prise pour cible",
-    role: "Court métrage",
-    image: "/prise-pour-cible.png",
-    description: "Court métrage sans musique mettant en scène un échange",
-    challenge: "Parvenir à intégrer l'échange d'un objet au sein de la vidéo",
-    solution: "L'objet échangé fût la trousse volée",
-    tools: "Premiere Pro, Audition",
-};
+const { videoId = "Uq4DlovpIlI" } = Astro.props; // ID YouTube passé en prop si besoin
+const project = getProjectBySlug("prise-pour-cible");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 <BasicLayout title="Spotify Motion">

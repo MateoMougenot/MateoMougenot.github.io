@@ -1,14 +1,12 @@
 ---
 import BasicLayout from "../../layout/BasicLayout.astro";
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-    role: "Motion Designer",
-    title: "Vidéo de présentation",
-    description:
-      "",
-    image: "/Motion-presentation.png",
-    tools: "After Effects",
-};
+const project = getProjectBySlug("presentation-motion");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 <BasicLayout title="My eyes motion">

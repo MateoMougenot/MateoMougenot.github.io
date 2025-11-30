@@ -1,16 +1,12 @@
 ---
 import BasicLayout from "../../layout/BasicLayout.astro";
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-    role: "Motion Designer",
-    title: "Digital cleanup day",
-    description:
-        "Un projet qui avait pour but de faire la promotion d'un évènement. Évènement qui avait pour objectif de réduire la pollution digital en poussant les gens à nettoyer leur empreinte carbone",
-    image: '/digital-cleanup-day.png',
-    tools: "After Effects",
-    challenge: "Parvenir à faire passer un message écologique en animation",
-    solution: "..."
-};
+const project = getProjectBySlug("digital-cleanup-day");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 <BasicLayout title="My eyes motion">

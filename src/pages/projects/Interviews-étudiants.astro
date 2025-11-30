@@ -1,17 +1,12 @@
 ---
 import BasicLayout from "../../layout/BasicLayout.astro";
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-  title: "Interviews étudiants",
-  role: "Interviews type konbini",
-  image: "/konbini.webp",
-  description:
-    "Mes premières réalisations pour lesquelles j'ai dû gérer préparation, tournage, et postproduction",
-  challenge:
-    "Parvenir à redonner une nouvelle image à une institution aux airs trop fermés",
-  solution: "S'adapter avec un format dynamique et destiné aux jeunes",
-  tools: "Premiere Pro, Photoshop",
-};
+const project = getProjectBySlug("Interviews-étudiants");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 <BasicLayout title="Interviews étudiants">

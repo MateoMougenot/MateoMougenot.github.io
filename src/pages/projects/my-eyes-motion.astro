@@ -1,16 +1,12 @@
 ---
-
 import BasicLayout from "../../layout/BasicLayout.astro";
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-  role: "Motion Designer",
-  title: "My Eyes",
-  description: "Mon premier projet se calquant sur des paroles de musique. En l'occurence la musique My eyes de Travis Scott.",
-  image: "/my-eyes-motion.jpg",
-  tools: "After Effects",
-  challenge: "Arriver à créer une animation dynamique sur des paroles d'une musique",
-  solution: "Motion d'élément UI styles Apple dynamique"
-};
+const project = getProjectBySlug("my-eyes-motion");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 

@@ -1,17 +1,12 @@
 ---
 import BasicLayout from "../../layout/BasicLayout.astro";
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-  role: "Motion Designer",
-  title: "Spotify logo",
-  description:
-    "L'animation de logo me faisait de l'oeil, alors je m'y suis essayé...",
-  image: "/spotify-motion.jpg",
-  tools: "After Effects",
-  challenge:
-    "Partir d'un élément représentant la musique pour finir sur le logo",
-  solution: "Partir d'ondes sonores transitionnant vers le logo de Spotify",
-};
+const project = getProjectBySlug("spotify-motion");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 <BasicLayout title="Spotify logo">

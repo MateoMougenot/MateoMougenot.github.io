@@ -1,15 +1,13 @@
 ---
 import BasicLayout from "../../layout/BasicLayout.astro";
-const { videoId = "fXHq1kePjTY" } = Astro.props; // ID YouTube passé en prop si besoin
+import { getProjectBySlug } from "../../data/projects";
 
-const project = {
-    role: 'Vidéo promotionelle',
-    image: '/lumiping.png',
-    description: "Vidéo promotionelle d'un nouveau jeu au sein d'un espace de coworking sur le thème d'un tennis de table revisité",
-    challenge: "Parvenir à donner envie aux membres de participer à ce nouveau jeu",
-    solution: "Mettre en situation l'activité et l'utilisation de son application",
-    tools: 'Premiere Pro, Photoshop',
-};
+const { videoId = "fXHq1kePjTY" } = Astro.props; // ID YouTube passé en prop si besoin
+const project = getProjectBySlug("lumiping");
+
+if (!project) {
+    return Astro.redirect("/");
+}
 ---
 
 <BasicLayout title="Lumiping">
