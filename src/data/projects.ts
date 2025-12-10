@@ -75,8 +75,74 @@ export const projects: Project[] = [
     solution:
       "S'adapter avec un format dynamique et destiné aux jeunes sous les contraintes d'une charte graphique déjà existante",
     tools: "Premiere Pro, Photoshop, After effects",
-    featured: false,
+    featured: true,
     slug: "beaupeyrat",
+  },
+  {
+    id: 7,
+    title: "Interviews étudiants",
+    role: "Interviews type konbini",
+    image: "/konbini.webp",
+    description:
+      "Mes premières réalisations pour lesquelles j'ai dû gérer préparation, tournage, et postproduction",
+    challenge:
+      "Parvenir à redonner une nouvelle image à une institution aux airs trop fermés",
+    solution: "S'adapter avec un format dynamique et destiné aux jeunes",
+    tools: "Premiere Pro, Photoshop, After effects",
+    featured: false,
+    slug: "Interviews-étudiants",
+  },
+  {
+    id: 4,
+    title: "Prise pour cible",
+    role: "Court métrage",
+    image: "/prise-pour-cible.png",
+    description: "Court métrage sans musique mettant en scène un échange",
+    challenge: "Parvenir à intégrer l'échange d'un objet au sein de la vidéo",
+    solution: "L'objet échangé fût la trousse volée",
+    tools: "Premiere Pro, Audition",
+    featured: true,
+    slug: "prise-pour-cible",
+  },
+  {
+    id: 5,
+    title: "Lumiping",
+    role: "Vidéo promotionelle",
+    image: "/lumiping.png",
+    description:
+      "Vidéo promotionelle d'un nouveau jeu au sein d'un espace de coworking sur le thème d'un tennis de table revisité",
+    challenge:
+      "Parvenir à donner envie aux membres de participer à ce nouveau jeu",
+    solution:
+      "Mettre en situation l'activité et l'utilisation de son application",
+    tools: "Premiere Pro, Photoshop",
+    featured: false,
+    slug: "lumiping",
+  },
+  {
+    id: 6,
+    title: "Genshin killer",
+    role: "Vidéo humouristique/gaming",
+    image: "/Genshin-killer.jpg",
+    description: "La première vraie vidéo youtube sur laquelle j'ai travaillé",
+    challenge: "Parvenir à redynamiser une chaine inactive depuis un temps",
+    solution: "Réaliser un best-of dynamique",
+    tools: "Premiere Pro, After effects",
+    featured: false,
+    slug: "Genshin-killer",
+  },
+  {
+    id: 9,
+    title: "Animation d'un lieu touristique",
+    role: "Motion design",
+    image: "/motiondesign_lieuxtouristique.png",
+    description:
+      "Animation d'un lieu touristique, en l'occurence l'opéra de sydney",
+    challenge: "...",
+    solution: "...",
+    tools: "Illustrator, After effects",
+    featured: false,
+    slug: "sydney-opera-motion",
   },
 ];
 
