@@ -4,3 +4,33 @@
 body{
     scroll-behavior: smooth;
 }
+
+/* Skeleton Loader Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Lazy Loading Image Placeholder Animation */
+img[data-src] {
+  background: linear-gradient(90deg, rgb(31, 41, 55) 25%, rgb(55, 65, 81) 50%, rgb(31, 41, 55) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

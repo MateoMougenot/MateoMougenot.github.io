@@ -1,0 +1,42 @@
+---
+interface Props {
+  src: string;
+  type?: string;
+  autoplay?: boolean;
+  loop?: boolean;
+  muted?: boolean;
+  playsinline?: boolean;
+  class?: string;
+  poster?: string;
+}
+
+const {
+  src,
+  type = "video/mp4",
+  autoplay = true,
+  loop = true,
+  muted = true,
+  playsinline = true,
+  class: className = "",
+  poster
+} = Astro.props;
+---
+
+<video
+  data-src={src}
+  data-type={type}
+  autoplay={autoplay}
+  loop={loop}
+  muted={muted}
+  playsinline={playsinline}
+  class={`lazy-video ${className}`}
+  poster={poster}
+>
+  Votre navigateur ne supporte pas la lecture vidéo.
+</video>
+
+<style>
+  :global(.lazy-video) {
+    transition: opacity 0.4s ease-in-out;
+  }
+</style>

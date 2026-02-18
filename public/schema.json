@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matéo Mougenot",
+  "url": "https://mateo-mougenot.com",
+  "image": "https://mateo-mougenot.com/photo-mateo.jpg",
+  "jobTitle": "Motion Designer & Video Creator",
+  "description": "Motion Designer et Vidéographe spécialisé en montage vidéo et motion design. Créations audiovisuelles innovantes et professionnelles.",
+  "email": "contact@mateo-mougenot.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/matéo-mougenot-48024b273/"
+  ],
+  "knowsAbout": [
+    "Motion Design",
+    "Video Editing",
+    "After Effects",
+    "Premiere Pro",
+    "Figma",
+    "Infographics"
+  ]
+}

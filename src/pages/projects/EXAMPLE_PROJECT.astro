@@ -1,0 +1,41 @@
+---
+// EXEMPLE : Comment utiliser les optimisations dans une page projet
+import BasicLayout from "../../layout/BasicLayout.astro";
+import LazyImage from "../../components/LazyImage.astro";
+import LazyVideo from "../../components/LazyVideo.astro";
+import { projectMetaTags } from "../../data/projectMeta";
+import { getProjectBySlug } from "../../data/projects";
+
+const project = getProjectBySlug("my-eyes-motion");
+const projectMeta = projectMetaTags["my-eyes-motion"];
+
+if (!project) {
+    return Astro.redirect("/");
+}
+---
+
+<BasicLayout 
+  title={projectMeta.title}
+  description={projectMeta.description}
+  image={projectMeta.image}
+  url={`https://mateo-mougenot.com/projects/${project.slug}`}
+>
+<!-- ... Votre contenu ici ... -->
+
+<!-- EXEMPLE DE LAZY IMAGE -->
+<LazyImage 
+  src="/mon-image.jpg" 
+  alt="Description de l'image"
+  width={1200}
+  height={600}
+  class="w-full rounded-2xl"
+/>
+
+<!-- EXEMPLE DE LAZY VIDEO -->
+<LazyVideo 
+  src="/ma-video.mp4"
+  poster="/video-thumbnail.jpg"
+  class="w-full rounded-2xl"
+/>
+
+</BasicLayout>
