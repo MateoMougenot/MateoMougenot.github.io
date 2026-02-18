@@ -231,7 +231,7 @@ const achievements = [
   <script>
     const section = document.querySelector('#apropos');
     
-    section?.addEventListener('mouseenter', () => {
+    const animateSection = () => {
       if (section.dataset.animate === 'true') return;
       
       section.dataset.animate = 'true';
@@ -247,6 +247,26 @@ const achievements = [
       // Animer la section droite
       const right = section.querySelector('[data-animate-target="fade-right"]');
       if (right) right.classList.add('fade-right');
-    });
+    };
+    
+    // Utiliser Intersection Observer pour déclencher l'animation en mobile et desktop
+    if (section) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateSection();
+              observer.unobserve(section);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      
+      observer.observe(section);
+    }
+    
+    // Garder mouseenter pour une expérience desktop améliorée
+    section?.addEventListener('mouseenter', animateSection);
   </script>
 </section>
