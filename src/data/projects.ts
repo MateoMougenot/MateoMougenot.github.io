@@ -15,7 +15,21 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    role: "Motion Designer",
+    role: "Motion Design",
+    title: "Jam by Spotify",
+    description:
+      "Animation commerciale pour la nouvelle fonctionnalité Jam de Spotify",
+    image: "/spotify-jam-motion.png",
+    tools: "After Effects",
+    challenge:
+      "Arriver à créer une animation commerciale dynamique qui se cale sur une musique House, tout en véhiculant correctement l'annonce voulue",
+    solution: "Animation dynamique d'éléments UI, jeux de caméra 3D dynamique, transitions fluides, tout en se calquant sur le rythme de la musique",
+    featured: true,
+    slug: "spotify-jam-motion",
+  },
+    {
+    id: 1,
+    role: "Motion Design",
     title: "My Eyes",
     description:
       "Mon premier projet se calquant sur des paroles de musique. En l'occurence la musique My eyes de Travis Scott.",
@@ -29,7 +43,7 @@ export const projects: Project[] = [
   },
   {
     id: 10,
-    role: "Motion Designer",
+    role: "Motion Design",
     title: "Vidéo de présentation",
     description: "",
     image: "/Motion-presentation.png",
@@ -48,7 +62,7 @@ export const projects: Project[] = [
       "Partir d'un élément représentant la musique pour finir sur le logo",
     solution: "Partir d'ondes sonores transitionnant vers le logo de Spotify",
     tools: "After Effects",
-    featured: true,
+    featured: false,
     slug: "spotify-motion",
   },
   {
