@@ -14,13 +14,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 1,
+    id: 11,
     role: "Motion Design",
     title: "Jam by Spotify",
     description:
       "Animation commerciale pour la nouvelle fonctionnalité Jam de Spotify",
     image: "/spotify-jam-motion.png",
-    tools: "After Effects",
+    tools: "After Effects, Figma",
     challenge:
       "Arriver à créer une animation commerciale dynamique qui se cale sur une musique House, tout en véhiculant correctement l'annonce voulue",
     solution: "Animation dynamique d'éléments UI, jeux de caméra 3D dynamique, transitions fluides, tout en se calquant sur le rythme de la musique",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     description:
       "Mon premier projet se calquant sur des paroles de musique. En l'occurence la musique My eyes de Travis Scott.",
     image: "/my-eyes-motion.jpg",
-    tools: "After Effects",
+    tools: "After Effects, Figma",
     challenge:
       "Arriver à créer une animation dynamique sur des paroles d'une musique",
     solution: "Motion d'élément UI styles Apple dynamique",
@@ -48,9 +48,21 @@ export const projects: Project[] = [
     description: "",
     image: "/Motion-presentation.png",
     tools: "After Effects",
-    challenge: "",
     featured: false,
+    challenge: "",
     slug: "presentation-motion",
+  },
+    {
+    id: 12,
+    role: "UX/UI designer, Content creator",
+    title: "Expérience sensorielle",
+    description: "La mission : Créer et mettre en place une campagne de communication visuelle pour la création d’un 'Bar à thème'. Mon bar était sur le thème 'à l'envers'",
+    image: "/cover-soffittos.png",
+    tools: "Figma, Illustrator",
+    challenge: "Mettre en place une campagne de ommunication visuelle répondant à un cahier des charges imposé. Etre capables de justifier les choix et propositions faites au commanditaire en répondant à la question : Comment définir et exploiter une identité visuelle pour donner du sens à une campagne de communication ?",
+    solution: "Mettre en place divers supports de communication en ayant défini au préalable une identité graphique adaptée au projet",
+    featured: false,
+    slug: "experience-sensorielle",
   },
   {
     id: 2,

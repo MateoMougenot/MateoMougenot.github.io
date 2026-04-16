@@ -9,7 +9,7 @@ if (!project) {
 }
 ---
 
-<BasicLayout title="My eyes motion">
+<BasicLayout title="Motion de presentation">
     <div class="min-h-screen bg-black">
         <!-- Bouton retour -->
         <div class="px-6 py-6 w-fit">
@@ -140,79 +140,27 @@ if (!project) {
         </section>
 
         <!-- Détails -->
-        <!-- <section class="px-6 py-20">
+        <section class="px-6 py-20">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
                 <!-- Challenge -->
-                <div
-                    class="space-y-6 opacity-0 translate-x-[-20px] animate-fadeInLeft"
-                >
-                    <div
-                        class="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
-                    >
-                        <div
-                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6"
-                        >
-                            <div
-                                class="w-6 h-6 border-2 border-white/50 rounded-full"
-                            >
-                            </div>
-                        </div>
-                        <h2
-                            class="text-white mb-4 tracking-tight text-[clamp(1.5rem,3vw,2rem)]"
-                        >
-                            Challenge
-                        </h2>
-                        <p class="text-white/60 leading-relaxed">
-                            {project.challenge}
-                        </p>
-                    </div>
-                </div>
+
 
                 <!-- Solution -->
-                <div
-                    class="space-y-6 opacity-0 translate-x-[20px] animate-fadeInRight delay-200"
-                >
-                    <div
-                        class="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
-                    >
-                        <div
-                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6"
-                        >
-                            <div class="w-6 h-6 bg-white/50 rounded"></div>
-                        </div>
-                        <h2
-                            class="text-white mb-4 tracking-tight text-[clamp(1.5rem,3vw,2rem)]"
-                        >
-                            Solution
-                        </h2>
-                        <p class="text-white/60 leading-relaxed">
-                            {project.solution}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
 
-        <!-- CTA -->
-        <section class="px-6 py-32 text-center">
-            <div
-                class="max-w-7xl mx-auto opacity-0 translate-y-5 animate-fadeInUp"
-            >
-                <h2
-                    class="text-white mb-8 tracking-tight text-[clamp(2rem,5vw,3rem)]"
-                >
-                    Voir tous les projets
-                </h2>
-                <a
-                    href="/#projets"
-                    class="px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300"
-                >
-                    Retour à la galerie
-                </a>
             </div>
         </section>
+
+  <!-- CTA -->
+  <section class="px-6 py-32 text-center">
+    <div class="max-w-7xl mx-auto opacity-0 translate-y-5 animate-fadeInUp">
+      <h2 class="text-white mb-8 tracking-tight text-[clamp(2rem,5vw,3rem)]">Voir tous les projets</h2>
+      <a href="/#projets" class="px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300">
+        Retour à la galerie
+      </a>
+    </div>
+  </section>
     </div>
 
     <style>
