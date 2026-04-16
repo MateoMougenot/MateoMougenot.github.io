@@ -61,7 +61,7 @@ export const projects: Project[] = [
     tools: "Figma, Illustrator",
     challenge: "Mettre en place une campagne de ommunication visuelle répondant à un cahier des charges imposé. Etre capables de justifier les choix et propositions faites au commanditaire en répondant à la question : Comment définir et exploiter une identité visuelle pour donner du sens à une campagne de communication ?",
     solution: "Mettre en place divers supports de communication en ayant défini au préalable une identité graphique adaptée au projet",
-    featured: false,
+    featured: true,
     slug: "experience-sensorielle",
   },
   {
